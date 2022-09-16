@@ -1,0 +1,17 @@
+{
+  "appName":"robBMI",
+  "homeTitle":"Body Mass Index Calculator",
+  "about": "About",
+  "data": "Dati",
+  "graph": "Grafico",
+  "addMeasure": "Aggiungi Misura",
+  "newMeasure": "Nuova Misura",
+  "bodyMassIndex":"Body Mass Index",
+  "weightTracker":"Diario Peso",
+  "weight": "Peso",
+  "height": "Altezza",
+  "result":"Risultato",
+  "settings":"Impostazioni",
+  "cmdSave":"Salva",
+  "cmdCalculate":"Calcola"
+}
