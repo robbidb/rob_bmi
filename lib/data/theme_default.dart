@@ -7,17 +7,10 @@ ThemeData myLightTheme() {
 
   TextTheme _myTextTheme(TextTheme base) {                                      // TESTI -  copio l'originale e lo modifico
     return base.copyWith(
-   //   bodySmall: base.bodySmall!.copyWith(fontFamily: "Roboto", fontSize: 12.0, color: Colors.white),
-   //   headline1: base.headline1!.copyWith(fontFamily: "Roboto", fontSize: 22.0, color: Colors.green,),
-   //   headline6: base.headline6!.copyWith(fontFamily: "Roboto", fontSize: 15.0, color: Colors.orange),
-   //   headline4: base.headline1!.copyWith(fontFamily: "Roboto", fontSize: 24.0, color: Colors.white,),
-   //   headline3: base.headline1!.copyWith(fontFamily: "Roboto", fontSize: 22.0, color: Colors.grey,),
-
-   //   caption: base.caption!.copyWith(color: Color(0xFFCCC5AF),),
-   //   bodyText2: base.bodyText2!.copyWith(color: Color(0xFF807A6B)),
-   //   bodyText1: base.bodyText1!.copyWith(color: Colors.brown),
-
-     button: base.button!.copyWith(fontSize: 22,color: Colors.white,),
+      button: base.button!.copyWith(fontSize: 22,color: Colors.white,),
+      headline4: base.headline4!.copyWith(color: Colors.grey[800]),
+      headline6: base.headline6!.copyWith(color: Colors.grey[800]),
+      subtitle2: base.subtitle2!.copyWith(color: Colors.grey[800]),
     );
   }
 
@@ -27,9 +20,7 @@ ThemeData myLightTheme() {
     scaffoldBackgroundColor: Colors.white38,
     primaryColor: Color(0xffce107c),
     indicatorColor: Color(0xFF807A6B),
-//    scaffoldBackgroundColor: Color(0xFFF5F5F5),
-  //  accentColor: Color(0xFFFFF8E1),
-    
+
     primaryIconTheme: lt.primaryIconTheme.copyWith(
       color: Colors.white,
       size: 20,
@@ -38,7 +29,6 @@ ThemeData myLightTheme() {
       color: Colors.white,
     ),
     
-    buttonColor: Colors.white,
     backgroundColor: Colors.white,                                               // Colore sfondo pagina
     tabBarTheme: lt.tabBarTheme.copyWith(
       labelColor: Color(0xffce107c),
@@ -53,19 +43,14 @@ ThemeData myLightTheme() {
 ThemeData myDarkTheme() {
   final ThemeData dt = ThemeData.dark();
 
-    // Tema TESTO
-    TextTheme _myTextTheme(TextTheme base) {                                    // TESTI -  copio l'originale e lo modifico
-      return base.copyWith(
-     //   bodySmall: base.bodySmall!.copyWith(fontFamily: "Roboto", fontSize: 12.0, color: Colors.black54),
-        //headline1: base.headline1!.copyWith(fontFamily: "Roboto", fontSize: 22.0, color: Colors.green,),
-    //    headline6: base.headline6!.copyWith(fontFamily: "Roboto", fontSize: 15.0, color: Colors.orange),
-      //  headline4: base.headline1!.copyWith(fontFamily: "Roboto", fontSize: 24.0, color: Colors.white,),
-        //headline3: base.headline1!.copyWith(fontFamily: "Roboto", fontSize: 22.0, color: Colors.grey,),
-
-        button: base.button!.copyWith(fontSize: 22,color: Colors.white),
-
-      );
-    }
+  TextTheme _myTextTheme(TextTheme base) {                                      // TESTI -  copio l'originale e lo modifico
+    return base.copyWith(
+      button: base.button!.copyWith(fontSize: 22,color: Colors.white),
+      headline4: base.headline4!.copyWith(color: Colors.black),
+      headline6: base.headline6!.copyWith(color: Colors.black),
+      subtitle2: base.subtitle2!.copyWith(color: Colors.black),
+    );
+  }
 
   return dt.copyWith(
     textTheme: _myTextTheme(dt.textTheme),                                      // TESTI
@@ -73,7 +58,6 @@ ThemeData myDarkTheme() {
     scaffoldBackgroundColor: Colors.black87,
     primaryColor: Colors.black38,
 
-//    indicatorColor: Color(0xFF807A6B),
     indicatorColor: Color(0xFF807A6B),
     primaryIconTheme: dt.primaryIconTheme.copyWith(
       color: Colors.green,

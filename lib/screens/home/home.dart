@@ -4,6 +4,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:rob_bmi/main.dart';
 import 'package:flutter_spinbox/flutter_spinbox.dart';
 import 'package:rob_bmi/data/theme_default.dart';
+import 'package:rob_bmi/screens/home/home_header.dart';
 
 
 class HomePage extends StatefulWidget { HomePage({Key? key}) : super(key: key);
@@ -32,16 +33,6 @@ class _HomePageState extends State<HomePage> {
   //--- WIDGET - App Bar -------------------------------------------------------
   PreferredSizeWidget _appBar() {
     return AppBar(
-      leading: Builder(                                                       // Menu SX
-        builder: (BuildContext context) {
-          return IconButton(
-            icon: const Icon(Icons.menu),
-            onPressed: () {Scaffold.of(context).openDrawer();},
-            tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
-          );
-        },
-      ),
-
       elevation: 0,                                                           // ombra
 
       title: Text(AppLocalizations.of(context)!.homeTitle,),                  // Intestazione
@@ -118,15 +109,6 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  //--- BODY - Header ----------------------------------------------------------
-  Widget _header() {
-    return Padding(                                                           // Titolo Pagina (da rimuovere)
-      padding: const EdgeInsets.symmetric(horizontal: 30,vertical: 10),
-      child:
-      SizedBox(height: 20,),
-    );
-  }
-
   //--- BODY - Menu ------------------------------------------------------------
   Widget _body() {
     return Column(
@@ -141,7 +123,7 @@ class _HomePageState extends State<HomePage> {
             margin: const EdgeInsets.all(10.0),
 
             child: SizedBox(
-              height: 380,
+              height: 370,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -290,34 +272,32 @@ class _HomePageState extends State<HomePage> {
   }
 
   //--- BODY - Bottom ----------------------------------------------------------
-  Widget _bottom() {
-    return
-      Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Container(
-            height: 60,
-            width: 240,
-            margin: EdgeInsets.only(left: 10.0, right: 10.0, top: 20.0, bottom: 20.0),
-            child:
-            ElevatedButton(
-              onPressed: () {
-                setState(() {
-                  BmiCalculator calc = BmiCalculator(h: this.height, w: this.weight);
-                  result = calc.calculateBMI();
-                  result_text = calc.getResult();
-//                  result_interpretation = calc.getInterpretation();
-                });
-              },
-              child:  Text(
-                AppLocalizations.of(context)!.cmdCalculate,
-              ),
-            ),
-          ),
-        ],
-      );
-  }
-
+   Widget _bottom() {
+     return
+       Row(
+         mainAxisAlignment: MainAxisAlignment.center,
+         children: <Widget>[
+           Container(
+             height: 55,
+             width: 240,
+             margin: EdgeInsets.only(left: 10.0, right: 10.0, top: 5.0, bottom: 5.0),
+             child:
+             ElevatedButton(
+               onPressed: () {
+                 setState(() {
+                   BmiCalculator calc = BmiCalculator(h: this.height, w: this.weight);
+                   result = calc.calculateBMI();
+                   result_text = calc.getResult();
+                 });
+               },
+               child:  Text(
+                 AppLocalizations.of(context)!.cmdCalculate,
+               ),
+             ),
+           ),
+         ],
+       );
+   }
 
 
   @override
@@ -325,11 +305,9 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
         appBar: _appBar(),
 
-       // drawer: new DrawerWidget(),
-
         body: Column(
           children: [
-            _header(),
+            Home_Header(),
             _body(),
             _bottom(),
           ],
