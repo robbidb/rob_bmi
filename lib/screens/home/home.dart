@@ -1,8 +1,8 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:rob_bmi/main.dart';
 import 'package:flutter_spinbox/flutter_spinbox.dart';
+import 'package:rob_bmi/main.dart';
 import 'package:rob_bmi/data/theme_default.dart';
 import 'package:rob_bmi/screens/home/home_header.dart';
 
@@ -117,8 +117,8 @@ class _HomePageState extends State<HomePage> {
 
       children: <Widget>[
 
+          //--- Data Input -----------------------------------------------------
           Card(
-            color: Colors.white,
             elevation: 5,
             margin: const EdgeInsets.all(10.0),
 
@@ -133,7 +133,6 @@ class _HomePageState extends State<HomePage> {
                     children: <Widget>[
                       _SpinTitle(AppLocalizations.of(context)!.height),
 
-                      //_SpinValue(this.minHeight, this.maxHeight, 170, this.height),
                       Container(
                         width: AppTheme.fullWidth(context)/3,
                         child: SpinBox(
@@ -226,9 +225,8 @@ class _HomePageState extends State<HomePage> {
 
           ),
 
-        //--- RESULTS --------------------------------------------------------
+          //--- RESULTS --------------------------------------------------------
           Card(
-            color: Colors.white,
             elevation: 5,
             margin: const EdgeInsets.all(10.0),
 
@@ -245,16 +243,16 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
 
-                Container(
+                Container(                                                      // risultato numerico
                   padding: EdgeInsets.all(15),
                   child: Text(
                     result,
                     textAlign: TextAlign.center,
-                    style: bmiStyle.resultValueStyle,
+                    style: Theme.of(context).textTheme.headline2,
                   ),
                 ),
 
-                Container(
+                Container(                                                      // risultato testuale
                   padding: EdgeInsets.all(15),
                   child: Text(
                     result_text,
